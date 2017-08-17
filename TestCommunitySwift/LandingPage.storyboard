@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Navigator-->
+        <scene sceneID="XsN-ee-u1L">
+            <objects>
+                <navigationController storyboardIdentifier="LandingPage" id="BpR-j6-jmQ" userLabel="Main Navigator" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GD5-AR-hhU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yTG-fQ-27d" kind="relationship" relationship="rootViewController" id="j0v-l6-cT5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="erd-iP-4rE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1489" y="-9"/>
+        </scene>
+        <!--Community Container-->
+        <scene sceneID="GC3-fG-Fox">
+            <objects>
+                <viewController id="yTG-fQ-27d" userLabel="Community Container" customClass="LandingPageViewController" customModule="TestCommunitySwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sjO-d3-Q32"/>
+                        <viewControllerLayoutGuide type="bottom" id="apT-0N-gyP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UYt-4b-7fd">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-vn-4Vv">
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="&lt;" id="T5A-db-YeM">
+                                        <connections>
+                                            <action selector="back:" destination="yTG-fQ-27d" id="sTb-pv-IOc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="v7P-zK-fWy"/>
+                                    <barButtonItem title="&gt;" id="DxM-UX-Mjr">
+                                        <connections>
+                                            <action selector="forward:" destination="yTG-fQ-27d" id="3Ob-pA-zo9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GCs-hO-nIC"/>
+                                    <barButtonItem title="Refresh" id="Ddo-rf-Id3">
+                                        <connections>
+                                            <action selector="reload:" destination="yTG-fQ-27d" id="EFq-ZX-bWQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bkq-vn-4Vv" firstAttribute="leading" secondItem="UYt-4b-7fd" secondAttribute="leading" id="AWu-ao-45h"/>
+                            <constraint firstAttribute="trailing" secondItem="bkq-vn-4Vv" secondAttribute="trailing" id="Uib-eN-jvO"/>
+                            <constraint firstItem="apT-0N-gyP" firstAttribute="top" secondItem="bkq-vn-4Vv" secondAttribute="bottom" id="pX6-Sh-Cnu"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="lVO-na-j5Z"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="T5A-db-YeM" id="Mqv-P5-lbi"/>
+                        <outlet property="forwardButton" destination="DxM-UX-Mjr" id="ddg-qd-JJD"/>
+                        <outlet property="reloadButton" destination="Ddo-rf-Id3" id="Q2D-ZM-tYo"/>
+                        <outlet property="urlNavigationItem" destination="lVO-na-j5Z" id="FBu-2K-cK8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yon-nx-Mg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-748" y="-9.4452773613193415"/>
+        </scene>
+    </scenes>
+</document>
