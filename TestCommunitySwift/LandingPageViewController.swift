@@ -25,11 +25,19 @@ class LandingPageViewController: UIViewController, SFSafariViewControllerDelegat
     var communityId:String = (SFUserAccountManager.sharedInstance().currentUser?.credentials.communityId)!
     var orgId:String = (SFUserAccountManager.sharedInstance().currentUser?.credentials.organizationId)!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let communityURLWithoutProtocol = communityURL.replacingOccurrences(of: "https://", with: "")
+        let communityURLArray = communityURLWithoutProtocol.components(separatedBy: "/")
+        var retURL:String = ""
+        for(index,element) in communityURLArray.enumerated(){
+            if index > 0{
+                retURL = "\(retURL)/\(element)"
+            }
+        }
+        retURL = "\(retURL)/s"
         
-        let urlString = "\(communityURL)/secur/frontdoor.jsp?sid=\(accessToken)&retURL=/mobilesdkapp/s"
+        let urlString = "\(communityURL)/secur/frontdoor.jsp?sid=\(accessToken)&retURL=\(retURL)"
         let url = URL(string: urlString)
         
         /*
