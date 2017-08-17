@@ -36,9 +36,9 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     var path = require('path');
 
     // Values in template
-    var templateAppName = 'iOSNativeSwiftTemplate';
-    var templatePackageName = 'com.salesforce.iosnativeswifttemplate';
-    var templateOrganization = 'iOSNativeSwiftTemplateOrganizationName';
+    var templateAppName = 'TestCommunitySwift';
+    var templatePackageName = 'com.kk.TestCommunitySwift';
+    var templateOrganization = 'Salesforce';
 
     // Key files
     var templatePodfile = 'Podfile';
@@ -50,6 +50,12 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     var templateInfoFile = path.join(templateAppName, 'Info.plist');
     var templateEntitlementsFile = path.join(templateAppName, templateAppName + '.entitlements');
     var templateAppDelegateFile = path.join(templateAppName, 'AppDelegate.swift');
+
+    var templateInitialViewController = path.join(templateAppName, 'InitialViewController.swift');
+    var templateLandingPageStoryBoard = path.join(templateAppName, 'LandingPage.storyboard');
+    var templateLandingPageViewController = path.join(templateAppName, 'LandingPageViewController.swift');
+    var templateRootViewController = path.join(templateAppName, 'RootViewController.swift');
+    var templateMain = path.join(templateAppName, 'main.swift');
 
     //
     // Replace in files
